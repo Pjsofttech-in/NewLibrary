@@ -1,0 +1,299 @@
+/* ===================================
+   MASTER TABLE CONTAINER
+=================================== */
+
+.master-table-container {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 16px 14px;
+}
+
+/* ===================================
+   HEADER (Search + Create + Count)
+=================================== */
+
+.master-table-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   SEARCH BOX
+=================================== */
+
+.master-search-box {
+  flex: 0 1 auto;
+  width: 220px;
+}
+
+.master-search-box .MuiOutlinedInput-root {
+  border-radius: 6px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.master-search-box .MuiOutlinedInput-input {
+  padding: 6px 10px;
+}
+
+/* ===================================
+   CREATE BUTTON
+=================================== */
+
+.master-create-btn {
+  flex-shrink: 0;
+
+  border-radius: 6px;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 12px;
+
+  padding: 6px 14px;
+  height: 32px;
+
+  background: linear-gradient(180deg, #6f98f4 0%, #5d89e8 100%);
+}
+
+.master-create-btn:hover {
+  background: linear-gradient(180deg, #5d89e8 0%, #4a77d8 100%);
+}
+
+/* ===================================
+   COUNT CHIP
+=================================== */
+
+.master-count-chip {
+  flex-shrink: 0;
+
+  font-weight: 600;
+  font-size: 11px;
+
+  border-color: #5d89e8 !important;
+  color: #5d89e8 !important;
+
+  padding: 0 10px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* ===================================
+   TABLE PAPER
+=================================== */
+
+.master-table-paper {
+  width: 100%;
+  min-width: 0;
+
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ===================================
+   PAGINATION
+=================================== */
+
+.master-table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 16px;
+  margin-top: 10px;
+
+  font-size: 12px;
+  color: #64748b;
+}
+
+.master-pagination-select {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* ===================================
+   DATAGRID
+=================================== */
+
+.master-table-paper .MuiDataGrid-root {
+  width: 100%;
+
+  border: none !important;
+
+  background: #fff;
+}
+
+.master-table-paper .MuiDataGrid-main {
+  width: 100%;
+}
+
+.master-table-paper .MuiDataGrid-columnHeaders {
+  background: #5d89e8;
+
+  border-bottom: 1px solid #5d89e8;
+  padding: 0 !important;
+}
+
+.master-table-paper .MuiDataGrid-columnHeader {
+  border-right: none !important;
+  padding: 0 6px !important;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.master-table-paper .MuiDataGrid-columnHeader:first-child {
+  padding-left: 48px !important;
+}
+
+.master-table-paper .MuiDataGrid-columnHeader:last-child {
+  padding-right: 48px !important;
+}
+
+.master-table-paper .MuiDataGrid-columnHeaderTitle {
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.master-table-paper .MuiDataGrid-columnHeader--alignLeft .MuiDataGrid-columnHeaderTitle {
+  justify-content: flex-start;
+}
+
+.master-table-paper .MuiDataGrid-columnHeader--alignCenter .MuiDataGrid-columnHeaderTitle {
+  justify-content: center;
+}
+
+.master-table-paper .MuiDataGrid-cell {
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #f1f5f9;
+  border-right: none !important;
+
+  font-size: 12px;
+  padding: 12px 6px !important;
+}
+
+.master-table-paper .MuiDataGrid-cell:first-child {
+  padding-left: 48px !important;
+}
+
+.master-table-paper .MuiDataGrid-cell:last-child {
+  padding-right: 48px !important;
+}
+
+.master-table-paper .MuiDataGrid-row:nth-of-type(even) {
+  background: #fafafa;
+}
+
+.master-table-paper .MuiDataGrid-row:hover {
+  background: #f8fbff;
+}
+
+.master-table-paper .MuiDataGrid-footerContainer {
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+  min-height: 40px;
+  padding: 6px 8px;
+}
+
+/* ===================================
+   ACTION BUTTONS
+=================================== */
+
+.master-table-paper .MuiDataGrid-cell .MuiButton-root {
+  background-color: #ef4444 !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  padding: 4px 8px !important;
+  height: 24px !important;
+  text-transform: none !important;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.master-table-paper .MuiDataGrid-cell .MuiButton-root:hover {
+  background-color: #dc2626 !important;
+}
+
+/* ===================================
+   EMPTY STATE
+=================================== */
+
+.master-table-paper .MuiDataGrid-overlay {
+  min-height: 240px;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 992px) {
+
+  .master-table-container {
+    padding: 8px 14px 12px;
+  }
+
+  .master-search-box {
+    width: 200px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .master-table-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .master-search-box,
+  .master-create-btn,
+  .master-count-chip {
+    width: 100%;
+  }
+
+  .master-count-chip {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .master-table-container {
+    padding: 8px 10px 12px;
+  }
+
+  .master-search-box {
+    width: 100%;
+  }
+
+  .master-search-box .MuiOutlinedInput-root {
+    height: 30px;
+    font-size: 11px;
+  }
+
+}

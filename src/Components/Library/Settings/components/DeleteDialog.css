@@ -1,0 +1,95 @@
+/* ===================================
+   DELETE DIALOG
+=================================== */
+
+.delete-dialog .MuiDialog-paper {
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 380px;
+}
+
+/* ===================================
+   TITLE
+=================================== */
+
+.delete-dialog .MuiDialogTitle-root {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d32f2f;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 24px;
+}
+
+/* ===================================
+   CONTENT
+=================================== */
+
+.delete-dialog .MuiDialogContent-root {
+  padding: 24px;
+}
+
+.delete-dialog .MuiDialogContentText-root {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.delete-dialog .MuiDialogContentText-root strong {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* ===================================
+   ACTIONS
+=================================== */
+
+.delete-dialog .MuiDialogActions-root {
+  padding: 18px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.delete-dialog .MuiButton-root {
+  text-transform: none;
+  font-weight: 600;
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.delete-dialog .MuiButton-contained {
+  box-shadow: none;
+}
+
+.delete-dialog .MuiButton-contained:hover {
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 600px) {
+  .delete-dialog .MuiDialog-paper {
+    min-width: auto;
+    width: calc(100% - 32px);
+    margin: 16px;
+  }
+
+  .delete-dialog .MuiDialogTitle-root {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .delete-dialog .MuiDialogContent-root {
+    padding: 16px;
+  }
+
+  .delete-dialog .MuiDialogActions-root {
+    padding: 16px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .delete-dialog .MuiButton-root {
+    width: 100%;
+  }
+}

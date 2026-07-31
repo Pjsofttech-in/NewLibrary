@@ -11,6 +11,10 @@ const navItems = [
     label: "Library Form",
     to: "/superadminclient/layout/layringlibrary/librarymanagement/LibraryForm",
   },
+  {
+    label: "Settings",
+    to: "/superadminclient/layout/layringlibrary/librarymanagement/Settings",
+  },
 ];
 
 const LibrarySidebar = () => {
@@ -38,7 +42,6 @@ const LibrarySidebar = () => {
           backgroundColor: "cornflowerblue",
           padding: "8px",
           borderRadius: "30px",
-          boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
           border: "1px solid black",
         }}
       >
@@ -50,51 +53,39 @@ const LibrarySidebar = () => {
             width: "100%",
           }}
         >
-          {navItems.map((item, index) => {
-            const isActive =
-              location.pathname === item.to ||
-              (item.label === "Dashboard" &&
-                location.pathname ===
-                  "/superadminclient/layout/layringlibrary/librarymanagement");
-
-            return (
-              <NavLink
-                key={index}
-                to={item.to}
-                style={{
-                  textDecoration: "none",
-                  flex: 1,
-                }}
-              >
+          {navItems.map((item, index) => (
+            <NavLink
+              key={index}
+              to={item.to}
+              end={item.label === "Dashboard"}
+              style={{ textDecoration: "none", flex: 1 }}
+            >
+              {({ isActive }) => (
                 <Button
                   fullWidth
                   sx={{
                     padding: "4px 10px",
                     fontSize: "12px",
                     fontWeight: isActive ? "bold" : "normal",
-                    textAlign: "center",
                     color: isActive ? "black" : "white",
                     backgroundColor: isActive ? "white" : "transparent",
                     borderRadius: "30px",
                     textTransform: "none",
-                    border: isActive ? "1px solid black" : "",
+                    border: isActive ? "1px solid black" : "none",
                     boxShadow: isActive
-                      ? "0px 4px 8px rgba(0, 0, 0, 0.2)"
+                      ? "0px 4px 8px rgba(0,0,0,.2)"
                       : "none",
-                    transition:
-                      "background-color 0.3s ease, color 0.3s ease",
+                    transition: ".3s",
                     "&:hover": {
-                      backgroundColor: isActive
-                        ? "#f5f5f5"
-                        : "#3b6fc4",
+                      backgroundColor: isActive ? "#f5f5f5" : "#3b6fc4",
                     },
                   }}
                 >
                   {item.label}
                 </Button>
-              </NavLink>
-            );
-          })}
+              )}
+            </NavLink>
+          ))}
         </Stack>
       </Paper>
 
