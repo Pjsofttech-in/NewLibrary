@@ -1,4 +1,4 @@
-import api from "../../../../Services/Api";
+import api from "../../../../Components/Common/axiosConfig";
 
 /**
  * GET ALL
@@ -43,4 +43,20 @@ export const update = async (endpoint, id, name) => {
  */
 export const remove = async (endpoint, id) => {
   await api.delete(`${endpoint}/${id}`);
+};
+
+/**
+ * CREATE RESOURCE (multi-field)
+ */
+export const createResource = async (data) => {
+  const response = await api.post("/resources", data);
+  return response.data;
+};
+
+/**
+ * UPDATE RESOURCE (multi-field)
+ */
+export const updateResource = async (id, data) => {
+  const response = await api.put(`/resources/${id}`, data);
+  return response.data;
 };

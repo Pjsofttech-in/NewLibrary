@@ -15,13 +15,10 @@ import {
 import "./SettingsSidebar.css";
 
 const menuIcons = {
-  category: <FaFolder />,
   academic_years: <FaCalendarAlt />,
   floors: <FaBuilding />,
   publishers: <FaBook />,
   resource_authors: <FaUsers />,
-  resource_categories: <FaTags />,
-  resource_publishers: <FaIndustry />,
   resource_statuses: <FaCheckCircle />,
   resource_types: <FaLayerGroup />,
   resources: <FaBoxOpen />,

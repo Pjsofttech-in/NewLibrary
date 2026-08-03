@@ -112,7 +112,7 @@ const MasterForm = ({
             onClick={handleSubmit}
             size="small"
             sx={{
-              px: 3,
+              px: 3,  
               py: 0.8,
               borderRadius: "6px",
               textTransform: "none",

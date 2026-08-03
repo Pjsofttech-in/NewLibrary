@@ -1,11 +1,5 @@
 const settingsMenu = [
   {
-    id: "category",
-    label: "Category",
-    api: "/categories",
-    field: "category",
-  },
-  {
     id: "academic_years",
     label: "Academic Years",
     api: "/academic-years",
@@ -26,20 +20,8 @@ const settingsMenu = [
   {
     id: "resource_authors",
     label: "Resource Authors",
-    api: "/resource-authors",
+    api: "/authors",
     field: "author",
-  },
-  {
-    id: "resource_categories",
-    label: "Resource Categories",
-    api: "/resource-categories",
-    field: "resourceCategory",
-  },
-  {
-    id: "resource_publishers",
-    label: "Resource Publishers",
-    api: "/resource-publishers",
-    field: "resourcePublisher",
   },
   {
     id: "resource_statuses",
