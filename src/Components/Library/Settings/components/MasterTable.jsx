@@ -221,6 +221,7 @@ const MasterTable = ({ selectedMenu }) => {
           />
         </Box>
 
+        <div className="master-table-scroll">
         <Paper elevation={2} className="master-table-paper">
           {loading ? (
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "40px" }}>
@@ -250,6 +251,7 @@ const MasterTable = ({ selectedMenu }) => {
             />
           )}
         </Paper>
+        </div>
 
         {!loading && filteredData.length > 0 && (
           <Box className="master-table-pagination">

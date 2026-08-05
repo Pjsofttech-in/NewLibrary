@@ -6,22 +6,20 @@
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 10px 16px 14px;
+  padding: 10px 12px 14px;
 }
 
 /* ===================================
-   HEADER (Search + Create + Count)
+   HEADER  (Search + Button + Chip)
 =================================== */
 
 .master-table-header {
   width: 100%;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 10px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -30,8 +28,8 @@
 =================================== */
 
 .master-search-box {
-  flex: 0 1 auto;
-  width: 220px;
+  flex: 1 1 160px;        /* grows to fill, min 160px */
+  max-width: 260px;
 }
 
 .master-search-box .MuiOutlinedInput-root {
@@ -50,20 +48,18 @@
 
 .master-create-btn {
   flex-shrink: 0;
-
-  border-radius: 6px;
-  text-transform: none;
-  font-weight: 600;
-  font-size: 12px;
-
-  padding: 6px 14px;
-  height: 32px;
-
-  background: linear-gradient(180deg, #6f98f4 0%, #5d89e8 100%);
+  border-radius: 6px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  padding: 6px 14px !important;
+  height: 32px !important;
+  background: linear-gradient(180deg, #6f98f4 0%, #5d89e8 100%) !important;
+  white-space: nowrap;
 }
 
 .master-create-btn:hover {
-  background: linear-gradient(180deg, #5d89e8 0%, #4a77d8 100%);
+  background: linear-gradient(180deg, #5d89e8 0%, #4a77d8 100%) !important;
 }
 
 /* ===================================
@@ -72,17 +68,23 @@
 
 .master-count-chip {
   flex-shrink: 0;
-
-  font-weight: 600;
-  font-size: 11px;
-
+  font-weight: 600 !important;
+  font-size: 11px !important;
   border-color: #5d89e8 !important;
   color: #5d89e8 !important;
+  height: 32px !important;
+  white-space: nowrap;
+}
 
-  padding: 0 10px;
-  height: 32px;
-  display: flex;
-  align-items: center;
+/* ===================================
+   TABLE SCROLL WRAPPER
+   Allows horizontal scroll on small screens
+=================================== */
+
+.master-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ===================================
@@ -93,13 +95,10 @@
   width: 100%;
   min-width: 0;
 
-  border-radius: 8px;
+  border-radius: 8px !important;
   border: 1.5px solid #cbd5e1;
-
   overflow: hidden;
-
   background: #fff;
-
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -111,9 +110,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 
-  padding: 12px 16px;
-  margin-top: 10px;
+  padding: 10px 12px;
+  margin-top: 8px;
 
   font-size: 12px;
   color: #64748b;
@@ -129,14 +130,12 @@
 }
 
 /* ===================================
-   DATAGRID
+   DATAGRID — base
 =================================== */
 
 .master-table-paper .MuiDataGrid-root {
   width: 100%;
-
   border: none !important;
-
   background: #fff;
 }
 
@@ -146,25 +145,16 @@
 
 .master-table-paper .MuiDataGrid-columnHeaders {
   background: #5d89e8;
-
   border-bottom: 1px solid #5d89e8;
   padding: 0 !important;
 }
 
 .master-table-paper .MuiDataGrid-columnHeader {
   border-right: none !important;
-  padding: 0 6px !important;
+  padding: 0 8px !important;
   height: 44px;
   display: flex;
   align-items: center;
-}
-
-.master-table-paper .MuiDataGrid-columnHeader:first-child {
-  padding-left: 48px !important;
-}
-
-.master-table-paper .MuiDataGrid-columnHeader:last-child {
-  padding-right: 48px !important;
 }
 
 .master-table-paper .MuiDataGrid-columnHeaderTitle {
@@ -175,31 +165,13 @@
   white-space: nowrap;
 }
 
-.master-table-paper .MuiDataGrid-columnHeader--alignLeft .MuiDataGrid-columnHeaderTitle {
-  justify-content: flex-start;
-}
-
-.master-table-paper .MuiDataGrid-columnHeader--alignCenter .MuiDataGrid-columnHeaderTitle {
-  justify-content: center;
-}
-
 .master-table-paper .MuiDataGrid-cell {
   display: flex;
   align-items: center;
-
   border-bottom: 1px solid #f1f5f9;
   border-right: none !important;
-
   font-size: 12px;
-  padding: 12px 6px !important;
-}
-
-.master-table-paper .MuiDataGrid-cell:first-child {
-  padding-left: 48px !important;
-}
-
-.master-table-paper .MuiDataGrid-cell:last-child {
-  padding-right: 48px !important;
+  padding: 10px 8px !important;
 }
 
 .master-table-paper .MuiDataGrid-row:nth-of-type(even) {
@@ -207,88 +179,119 @@
 }
 
 .master-table-paper .MuiDataGrid-row:hover {
-  background: #f8fbff;
+  background: #f0f5ff;
 }
 
 .master-table-paper .MuiDataGrid-footerContainer {
-  border-top: 1px solid #e5e7eb;
-  background: #fff;
-  min-height: 40px;
-  padding: 6px 8px;
+  display: none !important;
+}
+
+.master-table-paper .MuiDataGrid-overlay {
+  min-height: 200px;
 }
 
 /* ===================================
-   ACTION BUTTONS
+   ACTION BUTTONS inside grid
 =================================== */
 
-.master-table-paper .MuiDataGrid-cell .MuiButton-root {
+.master-table-paper .MuiDataGrid-cell .MuiButton-containedError {
   background-color: #ef4444 !important;
   color: #fff !important;
   font-size: 11px !important;
-  padding: 4px 8px !important;
+  padding: 3px 8px !important;
   height: 24px !important;
   text-transform: none !important;
   font-weight: 600;
   border-radius: 4px;
+  box-shadow: none !important;
 }
 
-.master-table-paper .MuiDataGrid-cell .MuiButton-root:hover {
+.master-table-paper .MuiDataGrid-cell .MuiButton-containedError:hover {
   background-color: #dc2626 !important;
 }
 
-/* ===================================
-   EMPTY STATE
-=================================== */
-
-.master-table-paper .MuiDataGrid-overlay {
-  min-height: 240px;
+.master-table-paper .MuiDataGrid-cell .MuiButton-containedPrimary {
+  font-size: 11px !important;
+  padding: 3px 8px !important;
+  height: 24px !important;
+  text-transform: none !important;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: none !important;
 }
 
 /* ===================================
-   RESPONSIVE
+   RESPONSIVE — tablet  ≤ 992px
 =================================== */
 
 @media (max-width: 992px) {
-
-  .master-table-container {
-    padding: 8px 14px 12px;
-  }
-
-  .master-search-box {
-    width: 200px;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .master-table-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .master-search-box,
-  .master-create-btn,
-  .master-count-chip {
-    width: 100%;
-  }
-
-  .master-count-chip {
-    justify-content: center;
-  }
-
-}
-
-@media (max-width: 576px) {
-
   .master-table-container {
     padding: 8px 10px 12px;
   }
 
   .master-search-box {
-    width: 100%;
+    max-width: 220px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE — mobile  ≤ 768px
+=================================== */
+
+@media (max-width: 768px) {
+  .master-table-container {
+    padding: 8px 8px 12px;
+  }
+
+  /* Stack header items */
+  .master-table-header {
+    flex-direction: row;      /* keep row but allow wrap */
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .master-search-box {
+    flex: 1 1 120px;
+    max-width: 100%;
+  }
+
+  .master-create-btn {
+    flex: 1 1 120px !important;
+  }
+
+  .master-count-chip {
+    flex: 0 0 auto;
+  }
+
+  /* Reduce cell padding so columns don't overflow */
+  .master-table-paper .MuiDataGrid-columnHeader {
+    padding: 0 4px !important;
+  }
+
+  .master-table-paper .MuiDataGrid-cell {
+    padding: 8px 4px !important;
+  }
+
+  .master-table-paper .MuiDataGrid-columnHeaderTitle {
+    font-size: 11px;
+  }
+
+  .master-table-paper .MuiDataGrid-cell {
+    font-size: 11px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE — small mobile  ≤ 480px
+=================================== */
+
+@media (max-width: 480px) {
+  .master-table-container {
+    padding: 6px 6px 10px;
+  }
+
+  .master-table-header {
+    gap: 6px;
   }
 
   .master-search-box .MuiOutlinedInput-root {
@@ -296,4 +299,14 @@
     font-size: 11px;
   }
 
+  .master-create-btn {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+    height: 30px !important;
+  }
+
+  .master-table-pagination {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
 }

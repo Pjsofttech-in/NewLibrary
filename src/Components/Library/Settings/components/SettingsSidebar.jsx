@@ -10,19 +10,25 @@ import {
   FaLayerGroup,
   FaBoxOpen,
   FaDoorOpen,
+  FaGlobe,
+  FaArchive,
+  FaClone,
 } from "react-icons/fa";
 
 import "./SettingsSidebar.css";
 
 const menuIcons = {
-  academic_years: <FaCalendarAlt />,
-  floors: <FaBuilding />,
-  publishers: <FaBook />,
+  academic_years:   <FaCalendarAlt />,
+  editions:         <FaClone />,
+  floors:           <FaBuilding />,
+  languages:        <FaGlobe />,
+  publishers:       <FaBook />,
+  racks:            <FaArchive />,
   resource_authors: <FaUsers />,
-  resource_statuses: <FaCheckCircle />,
-  resource_types: <FaLayerGroup />,
-  resources: <FaBoxOpen />,
-  rooms: <FaDoorOpen />,
+  resource_statuses:<FaCheckCircle />,
+  resource_types:   <FaLayerGroup />,
+  resources:        <FaBoxOpen />,
+  rooms:            <FaDoorOpen />,
 };
 
 const SettingsSidebar = ({

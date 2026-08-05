@@ -6,16 +6,34 @@ const settingsMenu = [
     field: "academicYear",
   },
   {
+    id: "editions",
+    label: "Editions",
+    api: "/editions",
+    field: "edition",
+  },
+  {
     id: "floors",
     label: "Floors",
     api: "/floors",
     field: "floor",
   },
   {
+    id: "languages",
+    label: "Languages",
+    api: "/languages",
+    field: "language",
+  },
+  {
     id: "publishers",
     label: "Publishers",
     api: "/publishers",
     field: "publisher",
+  },
+  {
+    id: "racks",
+    label: "Racks",
+    api: "/racks",
+    field: "rack",
   },
   {
     id: "resource_authors",

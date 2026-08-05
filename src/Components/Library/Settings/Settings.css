@@ -9,20 +9,11 @@
   width: 100%;
   min-height: calc(100vh - 70px);
 
-  padding: 20px;
-  gap: 20px;
+  padding: 16px;
+  gap: 16px;
 
   background: #f4f7fc;
-
   box-sizing: border-box;
-}
-
-/* ==========================================
-   SIDEBAR
-========================================== */
-
-.settings-sidebar {
-  flex-shrink: 0;
 }
 
 /* ==========================================
@@ -31,17 +22,17 @@
 
 .settings-content {
   flex: 1;
-  min-width: 0;
+  min-width: 0;           /* critical — prevents flex child from overflowing */
   max-width: 100%;
 
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
 }
 
 .settings-content > * {
   width: 100%;
+  min-width: 0;
 }
 
 /* ==========================================
@@ -50,7 +41,7 @@
 
 .settings-content .MuiPaper-root {
   width: 100%;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   overflow: hidden;
 }
 
@@ -64,32 +55,34 @@
 }
 
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE — tablet
 ========================================== */
 
 @media (max-width: 992px) {
-
-  .settings-container {
-    padding: 16px;
-    gap: 16px;
-  }
-
-}
-
-@media (max-width: 768px) {
-
   .settings-container {
     padding: 12px;
     gap: 12px;
   }
-
 }
 
-@media (max-width: 576px) {
+/* ==========================================
+   RESPONSIVE — mobile
+   Sidebar becomes fixed, content fills full width
+========================================== */
 
+@media (max-width: 768px) {
   .settings-container {
-    padding: 8px;
-    gap: 8px;
+    padding: 8px 8px 8px 66px; /* left padding = sidebar width (48px) + gap */
+    gap: 0;
   }
 
+  .settings-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-container {
+    padding: 6px 6px 6px 60px;
+  }
 }
